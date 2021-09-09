@@ -1,0 +1,50 @@
+color red = color(255,0,0);
+color yellow = color(255,255,0);
+color green = color(0,255,0);
+color grey = color(150);
+color Background = color(100);
+int FrameCounter = 0;
+boolean ready = false;
+boolean start = true;
+boolean stop = false;
+void setup() {
+  size(200, 600);
+  background(Background);
+  frameRate(1);
+}
+
+void draw() {
+FrameCounter ++;
+if(FrameCounter == 1 && start == true){
+  fill(red);
+  FrameCounter = 0;
+  start = false;
+  stop = true;
+}
+else{
+fill(grey);
+}
+  ellipse(100, 100, 150, 150);
+  if(FrameCounter == 1 && stop == true){
+  fill(yellow);
+    FrameCounter = 0;
+  stop = false;
+  ready = true;
+  
+}
+else{
+fill(grey);
+}
+  
+  ellipse(100, 300, 150, 150);
+  if(FrameCounter == 1 && ready == true){
+  fill(green);
+  FrameCounter = 0;
+  ready = false;
+  start = true;
+}
+else{
+fill(grey);
+}
+  ellipse(100, 500, 150, 150);
+}
