@@ -1,0 +1,18 @@
+//If you want this to work with negative numbers change the while loop to make input smaller than 0,
+//And make the loop add +1 to input instead of removing -1 or you'll get a infinite loop.
+int input = 30;
+int OriginalInput = 30;
+
+while(input>0){
+if(input==6){
+  println("SIX");
+}
+else if(input == OriginalInput/2){
+println("HALF!");
+//If you want the number to be printed, delete this slashes println(input);
+}
+ else{
+ println(input);
+ }
+input --;
+}
