@@ -1,0 +1,83 @@
+String output;
+String DayName;
+import java.util.Calendar;
+void setup() {
+  MethodOne();
+  MethodTwo();
+}
+
+/*
+  The following method has an error in it. Fix the error and run it.
+ */
+
+//to solve this problem, declare the output as a global variable instead of declaring inside the if statement.
+void MethodOne()
+{
+  int i = 1000; // You are not allowed to change this line.
+
+  int max = 10;
+
+  if (i > max)
+  {
+    output = "i is greater than "+max+".";
+  }
+
+  println(output);
+}
+
+/*
+ Finish the following method so that we can change the number assigned
+ to the weekday and it prints the correct output.
+ */
+void MethodTwo()
+{
+  int weekDay = 0; // 0 = Monday, 6 = Sunday.
+  Calendar c = Calendar.getInstance();
+  weekDay = c.get(Calendar.DAY_OF_WEEK);
+  boolean weekend = false;
+
+  switch(weekDay) {
+  case 2:
+    DayName = "monday";
+    break;
+  case 3:
+    DayName = "tuesday";
+    break;
+  case 4:
+    DayName = "wednesday";
+    break;
+  case 5:
+    DayName = "thursday";
+    break;
+  case 6:
+    DayName = "friday";
+    break;
+  case 7:
+    DayName = "saturday";
+    break;
+  case 1:
+    DayName = "sunday";
+    break;
+  }
+
+  if (weekDay<7 && weekDay>1)
+  {
+    weekend = false;
+  } else
+  {
+    weekend = true;
+  }
+
+  println(weekend);
+
+  // Print the name of the weekday here:
+  println(DayName);
+
+
+  // Print if it is weekend here:
+  if (weekDay<7 && weekDay>1) {
+    println("It's not weekend yet");
+  } else {
+    println("It's weekend HURRAY!!!");
+  }
+}
